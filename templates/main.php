@@ -5,9 +5,9 @@
         <ul class="main-navigation__list">
             <?php foreach ($projectArr as $list): ?>
                 <li class="main-navigation__list-item">
-                    <a class="main-navigation__list-item-link" href="#"><?= $list ?></a>
+                    <a class="main-navigation__list-item-link" href="#"><?= strip_tags($list) ?></a>
                     <!--Сюда вписать функцию для посчёта количества задач-->
-                    <span class="main-navigation__list-item-count"><?php echo takeProjectCount($taskArr, $list)?></span>
+                    <span class="main-navigation__list-item-count"><?php echo strip_tags(takeProjectCount($taskArr, $list))?></span>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -49,7 +49,7 @@
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1">
-                        <span class="checkbox__text<?php if($task["task_finished"] === true): ?> task--completed<?php endif; ?>"><?= $task["task"] ?></span>
+                        <span class="checkbox__text<?php if($task["task_finished"] === true): ?> task--completed<?php endif; ?>"><?= strip_tags($task["task"]) ?></span>
                     </label>
                 </td>
 
